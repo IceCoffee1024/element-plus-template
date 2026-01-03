@@ -85,7 +85,7 @@ pnpm typecheck
 
 ## 主题与暗黑模式
 
-主题与暗黑变量由 `composables/useTheme.ts` 统一管理，自动切换 Element Plus 相关 CSS 变量。全局样式在 `styles/index.scss` 中通过 `@use 'element-plus/theme-chalk/src/dark/css-vars.scss'` 支持 CSS 变量，`Header/AppearanceModeToggler` 提供 UI 切换。
+主题与暗黑变量由 `composables/useTheme.ts` 统一管理，自动切换 Element Plus 相关 CSS 变量。Element Plus 暗黑 CSS 变量通过 `plugins/element-plus.ts` 中的 `element-plus/theme-chalk/dark/css-vars.css` 引入，`Header/AppearanceModeToggler` 提供 UI 切换。
 
 ## 插件与工具
 
@@ -130,3 +130,5 @@ export default defineConfig({
 ### 主题变量如何维护？
 
 Element Plus 相关变量由 `composables/useTheme.ts` 通过 CSS 变量同步到 `document.documentElement`，无需额外的 `src/styles/element/*` 文件。
+
+暗黑 css-vars 由 `plugins/element-plus.ts` 引入 `element-plus/theme-chalk/dark/css-vars.css`。

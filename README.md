@@ -70,7 +70,7 @@ Routes are defined in `src/router/index.ts` and wrapped by `Layout` to generate 
 
 ## Theme & Dark Mode
 
-`composables/useTheme.ts` handles theme state, toggles, and automatically syncs Element Plus variables (primary/info/warning/success/danger palettes plus surface colors) via CSS vars on `document.documentElement`. `styles/index.scss` pulls in `element-plus/theme-chalk/src/dark/css-vars.scss` so dark-mode CSS vars stay consistent, and `Header/AppearanceModeToggler` provides the UI switch.
+`composables/useTheme.ts` handles theme state, toggles, and automatically syncs Element Plus variables (primary/info/warning/success/danger palettes plus surface colors) via CSS vars on `document.documentElement`. Element Plus dark CSS vars are imported through `plugins/element-plus.ts` (`element-plus/theme-chalk/dark/css-vars.css`), and `Header/AppearanceModeToggler` provides the UI switch.
 
 ## Plugins & Tools
 
@@ -110,4 +110,4 @@ export default defineConfig({
 
 ### How are theme variables managed?
 
-`composables/useTheme.ts` pushes Element Plus vars to `document.documentElement` via CSS variables, so there is no `src/styles/element/*` to edit. Dark CSS vars come from `styles/index.scss`, which `@use`s `element-plus/theme-chalk/src/dark/css-vars.scss`.
+`composables/useTheme.ts` pushes Element Plus vars to `document.documentElement` via CSS variables, so there is no `src/styles/element/*` to edit. Dark CSS vars are loaded in `plugins/element-plus.ts` from `element-plus/theme-chalk/dark/css-vars.css`.
