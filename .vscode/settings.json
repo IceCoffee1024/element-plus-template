@@ -40,5 +40,10 @@
     "src/locales"
   ],
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.sourceLanguage": "en"
+  "i18n-ally.sourceLanguage": "en",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.env": ".env.*"
+  }
 }
